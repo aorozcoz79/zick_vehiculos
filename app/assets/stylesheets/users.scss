@@ -1,0 +1,62 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.welcome {
+	text-align: center;
+	color: white;
+	border-radius: 5%;
+	position: absolute;
+	top: 12%;
+	color: #ff6b00;	
+	h4, p {
+		font-weight: bolder;
+	}
+}
+
+.form__wrapper {
+	position: absolute;
+	top: 30%;
+	background: white;
+	border-radius: 5%;
+	padding: 2% 5%;
+}
+
+.profession {
+	font-size: 85%;
+    line-height: 0px;
+}
+
+input:focus {
+	border-bottom: 1px solid #ff6b00 !important;
+  box-shadow: 0 1px 0 0 #ff6b00 !important;
+}
+
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+
+.background {
+	position: relative;
+	height: 100vh;
+	img {
+		width: 100%;
+	}
+}
+
+.background-users {
+	position: relative;
+	height: 100vh;
+	width: 100%
+
+	img {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+

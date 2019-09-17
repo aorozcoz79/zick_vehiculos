@@ -1,0 +1,63 @@
+<nav>
+	<a class="brand-logo center" href="/">VehicleList</a>
+	<ul class="right">
+		<li> <a href="/users">Usuarios</a> </li>
+	</ul>
+	<ul class="left">
+		<li> <a href="/vehicles">Vehículos</a> </li>
+	</ul>
+</nav>
+<div class="wrapper">
+	<div class="background"><%= image_tag 'bmw.jpg' %></div>
+		<div class="welcome">
+			<h4>Añada un carro a la lista de <%= @user.name %></h4>
+		</div>
+		<div class="form__wrapper">
+			<form action="/vehicles" method="post" >
+		    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+		    <div class="input-field">
+		      <label for="plate"> Matrícula: </label>
+		      <input type="text" id="plate" name="vehicle[plate]" required= true class="validate">
+		    </div>
+		    <div class="input-field">
+		      <label for="brand"> Marca: </label>
+		      <input type="text" id="plate" name="vehicle[brand]">
+		    </div>
+
+		    <div class="input">
+		      <label for="model"> Modelo: </label>
+		      <input type="text" id="model" name="vehicle[model]" required= true class="validate">
+		    </div>
+		    <div class="input-field">
+		      <label for="doors"> Número de puertas: </label>
+		      <input type="number" id="doors" name="vehicle[doors]" required= true class="validate">
+		    </div>
+
+		    <div class="input-field">
+		      <label for="kind"> Tipo de vehículo: </label>
+		      <input type="text" id="kind" name="vehicle[kind]" required= true class="validate">
+		    </div>
+
+
+		    <div class="input-field">
+		      <select name="vehicle[actual_vehicle]" id="actual_vehicle" required= true class="validate">
+		        <option disabled selected value>¿Es su vehículo actualmente?</option>
+		        <option value="true" >Sí</option>
+		        <option value="false">No</option>
+		      </select>
+		    </div>
+
+		    <div class="input-field hide">
+		      <input value=<%= @user.id %> name="vehicle[user_id]" id="user-id" required= true class="validate">
+		        
+		    </div>
+
+
+		    <div class="actions">
+		      <input type="submit" class="submit btn" value="Agregar">
+		    </div>
+
+
+	  	</form>
+	</div>

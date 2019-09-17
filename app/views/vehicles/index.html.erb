@@ -1,0 +1,57 @@
+<div class="user_new">
+  <% if flash[:notice].present? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+<div>
+<nav>
+	<a class="brand-logo center" href="/">VehicleList</a>
+	<ul class="left">
+		<li> <a href="/users">Usuarios</a> </li>
+	</ul>
+</nav>
+<div class="wrapper">
+	<div class="background-users"><%= image_tag 'bike.jpg' %></div>
+	
+	<div class="container">
+
+		<div class="row">
+			<div class="col s1 m2"></div>
+			<div class="col s10 m8">
+				<% @vehicles.each do |vehicle| %>
+					<div class="cart__container white">
+
+
+						<div class="row">
+							<div class="col s12 m12 l12">
+								<h5><%= vehicle.model %></h5>
+							</div>
+							<div class="user__cart col s6 m6 l6">
+								<p class="user__cart--title">Marca:</p>
+								<p class="user__cart--info"> <%= vehicle.brand  %></p>
+								<p class="user__cart--title">Propietario:</p>
+								<p class="user__cart--info"><%= vehicle.user.nil? ? 'Eliminado' : vehicle.user.name  %></p>
+								<p class="user__cart--title">Tipo de vehículo:</p>
+								<p class="user__cart--info"> <%= vehicle.kind %></p>
+								<p class="user__cart--title">Número de puertas:</p>
+								<p class="user__cart--info"> <%= vehicle.doors %></p>
+								<p class="user__cart--title">-Matrícula:</p>
+								<p class="user__cart--info"> <%= vehicle.plate %></p>
+								<p class="user__cart--title">Vehículo actual:</p>
+								<p class="user__cart--info"> <%= vehicle.actual_vehicle  === 'false' ? 'NO' : 'SI'%></p>
+							</div>
+
+							  <%= link_to "Eliminar", "/vehicles/#{vehicle.id}", method:"delete", class:"btn" %>
+							   <%= link_to "Editar", edit_vehicle_path(vehicle), class:"btn" %>	
+						</div>
+					</div>
+				<% end %>
+			</div>
+
+			<div class="col s1 m2"></div>
+		</div>
+	</div>
+</div>
+
+ 

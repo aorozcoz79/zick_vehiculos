@@ -1,0 +1,70 @@
+<div>
+	<nav>
+	<a class="brand-logo center" href="">VehicleList</a>
+		<ul class="left">
+		<li> <a href="/users">Usuarios</a> </li>
+	</ul>
+	<ul class="right">
+		<li> <a href="/vehicles">Vehículos</a> </li>
+	</ul>
+</nav>
+<div class="wrapper">
+	<div class="background"><%= image_tag 'bmw.jpg' %></div>
+		<div class="welcome">
+			<h4>Bienvenido, a VehicleList</h4>
+			<p>Registrate y guarde un historial de sus vehículos...!</p>
+		</div>
+		<div class="form__wrapper">
+			<form action="/users" method="post">
+		    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+		    <div class="input-field">
+		      <label for="name"> Nombres: </label>
+		      <input type="text" id="name" name="user[name]" required= true class="validate">
+		    </div>
+		    <div class="input-field">
+		      <label for="lastname"> Apellidos: </label>
+		      <input type="text" id="lastname" name="user[last_name]">
+		    </div>
+
+		    <div class="input">
+		      <label for="born_date"> Fecha de nacimiento: </label>
+		      <input type="date" id="born_date" name="user[born_date]" required= true class="validate">
+		    </div>
+		    <div class="input-field">
+		      <label for="profession"> Profesión u oficio: </label>
+		      <input type="text" id="profession" name="user[profession]" required= true class="validate">
+		    </div>
+
+		     <div class="input-field">
+		      <label for="identification"> Identificación: </label>
+		      <input type="text" id="identification" name="user[identification]" required= true class="validate">
+		    </div>
+
+		     <div class="input-field">
+		      <label for="income"> Ingresos mensuales: </label>
+		      <input type="number" id="income" name="user[income]" step="0.01" required= true class="validate">
+		    </div>
+
+
+		    <div class="input-field">
+		      <select name="user[married]" id="married" required= true class="validate">
+		        <option disabled selected value>Estado Civil</option>
+		        <option value="true" >Casado</option>
+		        <option value="false">Soltero</option>
+		      </select>
+		    </div>
+
+		    <div class="actions">
+		      <input type="submit" class="submit btn" value="Enviar">
+		    </div>
+	  	</form>
+	</div>
+
+</div>
+
+<script>
+	M.autoInit();
+</script>
+
+

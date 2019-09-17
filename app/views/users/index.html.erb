@@ -1,0 +1,50 @@
+<div class="user_new">
+  <% if flash[:notice].present? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+<div>
+<nav>
+	<a class="brand-logo center" href="/">VehicleList</a>
+	<ul class="left">
+		<li> <a href="/vehicles">Vehículos</a> </li>
+	</ul>
+</nav>
+<div class="wrapper">
+	<div class="background-users"><%= image_tag 'main-background.jpg' %></div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col s1 m2"></div>
+			<div class="col s10 m8">
+				<% @users.each do |user| %>
+				<div class="cart__container white">
+					<div class="row">
+						<div class="col s12 m12 l12">
+							<h5><%= "#{user.name} #{user.last_name} " %></h5>
+							<p class="profession"><%= user.profession %></p>
+						</div>
+							<p class="user__cart--title">Fecha de nacimiento:</p>
+							<p class="user__cart--info"> <%= user.born_date %></p>
+							<p class="user__cart--title">Identificación:</p>
+							<p class="user__cart--info"><%= user.identification %></p>
+							<p class="user__cart--title">Ingreso mensual:</p>
+							<p class="user__cart--info"> <%= "#{user.income}$" %></p>
+							<p class="user__cart--title">Estado Civil:</p>
+							<p class="user__cart--info"> <%= user.married  === 'false' ? 'Soltero' : 'Casado'%></p>
+						<div class="btn__container">
+							<%= link_to "Eliminar", "/users/#{user.id}", method:"delete", class:"btn eliminate" %>
+						  <%= link_to "Editar", edit_user_path(user), class:"btn" %>
+						  <%= link_to "Añadir", "users/#{user.id}", class:"btn" %>
+						</div>
+					</div>
+
+				</div>
+				<% end %>				
+
+			</div>
+			<div class="col s1 m2"></div>
+		</div>
+	</div>
+</div>

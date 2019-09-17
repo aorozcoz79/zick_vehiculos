@@ -1,0 +1,71 @@
+<div class="user_new">
+  <% if flash[:notice].present? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+</div>
+<nav>
+	<a class="brand-logo center" href="/">VehicleList</a>
+	<ul class="left">
+		<li> <a href="/vehicles">Vehículos</a> </li>
+	</ul>
+
+	<ul class="right">
+		<li> <a href="users">Usuarios</a> </li>
+	</ul>
+
+</nav>
+<div class="wrapper">
+	<div class="background"><%= image_tag 'bike.jpg' %></div>
+	<div class="form__wrapper">
+		<%= form_for @vehicle do |f| %>
+			<p>
+				<%= f.label :plate %>
+			<br>
+				<%= f.text_field :plate %>
+			</p>
+
+			<p>
+				<%= f.label :model %>
+			<br>
+				<%= f.text_field :model %>
+			</p>
+
+			<p>
+				<%= f.label :brand %>
+			<br>
+				<%= f.text_field :brand %>
+			</p>
+
+			<p>
+				<%= f.label :doors %>
+			<br>
+				<%= f.text_field :doors %>
+			</p>
+
+			<p>
+				<%= f.label :kind %>
+			<br>
+				<%= f.text_field :kind %>
+			</p>
+			
+			<p>
+				<%= f.label :actual_vehicle %>
+			<br>
+				<%= f.select :actual_vehicle, options_for_select([["Es su vehículo actualmente?", ""], ["Sí", "true"], ["No", "false"]])  %>
+			</p>
+			<p class="hide">
+				<%= f.label :user_id %>
+			<br>
+				<%= f.number_field :user_id%>
+			</p>
+			<p>
+				<%= f.submit 'Editar', class: 'btn' %>
+			</p>
+
+
+		<% end %>
+	</div>
+</div>
+

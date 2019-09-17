@@ -1,0 +1,123 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+@import 'materialize';
+@import 'material_icons';
+
+body {
+	line-height: 50%;
+}
+
+
+nav {
+	background-color: #194e6b;
+}
+
+.input-field {
+	padding-left: 2%;
+}
+
+select {
+	display: inline;
+}
+
+.hide {
+	display: none;
+}
+
+.user_new .notice {
+    background-color: #c2fdc2;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.user__cart {
+	text-decoration: none;
+	color: black;
+	display: flex;
+	width: 80%;
+	flex-direction: column;
+	border-radius: 5%;
+	padding: 2%;
+	opacity: 0.9;
+	p {
+		display: inline;
+	}
+	
+	h5 {
+		line-height: 0px
+	}
+}
+
+.user__cart--title {
+	margin-bottom: 0;
+	font-style: italic;
+}
+
+.user__cart--info {
+	font-size: 95%;
+}
+
+
+
+
+.container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	position: absolute;
+	top: 15%;
+}
+
+.cart__container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin: 5%;
+	border-radius: 5%;
+	padding: 5%;
+}
+
+.row {
+	margin: 0;
+	width: 100%
+}
+
+
+.btn {
+	margin: 5%;
+}
+
+
+.eliminate {
+	background-color: red;
+	color: white;
+}
+
+.eliminate:hover {
+	background-color: #c30b0b;
+}
+
+
+.btn {
+	width: 8rem;
+}
+
+.btn__container {
+	display: flex;
+}
